@@ -1,2 +1,13 @@
-<h1>Microposts#new</h1>
-<p>Find me in app/views/microposts/new.html.erb</p>
+<h3>Add new Microposts</h3>
+
+<%= form_for @micropost do |f| %>
+
+  <%= f.label :message %><br>
+  <%= f.text_field :message %><br>
+
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
+
+  <%= f.submit class: "btn btn-danger" %>
+
+<% end %>

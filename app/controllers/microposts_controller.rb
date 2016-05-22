@@ -8,7 +8,14 @@ class MicropostsController < ApplicationController
   end
 
   def create
-    #code
+    @micropost = Micropost.new(valid_params)
+    if @micropost.save
+      flash[:success] = "Micropost created successfully."
+      redirect_to root_path
+    else
+      flash[:warning] = "Something went wrong! Try again."
+      redirect_to new_micropost_path
+    end
   end
 
   def show
@@ -17,5 +24,11 @@ class MicropostsController < ApplicationController
 
   def edit
     #code
+  end
+
+  private
+
+  def valid_params
+    params.require(:micropost).permit(:message, :email)
   end
 end

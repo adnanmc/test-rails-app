@@ -1,7 +1,7 @@
 <h1>All Microposts</h1>
 
 <% @micropost.each do |m| %>
-  <p><%= m.message %> : <%= m.email %></p>
+  <p><%= link_to m.message, micropost_path(m) %>: <%= m.email %></p>
 
 
 <% end %>
