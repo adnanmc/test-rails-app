@@ -1,1 +1,13 @@
-edit.erb
+<h3>Edit Microposts</h3>
+
+<%= form_for @micropost do |f| %>
+
+  <%= f.label :message %><br>
+  <%= f.text_field :message %><br>
+
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
+
+  <%= f.submit class: "btn btn-danger" %>
+
+<% end %>
